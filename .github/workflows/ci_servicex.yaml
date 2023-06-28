@@ -52,7 +52,7 @@ jobs:
         
       - name: Extract tag name
         shell: bash
-        run: echo "imagetag=${{matrix.app.image_name}}:$(echo ${GITHUB_REF#refs/heads/})" >> $GITHUB_OUTPUT
+        run: echo "imagetag=${{matrix.app.image_name}}:$(echo ${GITHUB_REF##*/})" >> $GITHUB_OUTPUT
         id: extract_tag_name
 
       - name: Print Cache Tag Name
