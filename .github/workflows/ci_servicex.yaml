@@ -73,7 +73,7 @@ jobs:
         id: read_file
         uses: andstor/file-reader-action@v1
         with:
-          path: ${GITHUB_OUTPUT}
+          path: "${GITHUB_OUTPUT}"
 
       - name: File contents
         run: echo "${ steps.read_file.outputs.contents }"
