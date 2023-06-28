@@ -56,12 +56,17 @@ jobs:
         run: echo "##[set-output name=imagetag;]$(echo sslhep/${{matrix.app.image_name}}:${GITHUB_REF##*/})"
         id: extract_tag_name
 
-  etest:
-    needs: [build-matrix, test, publish]
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3.5.3
+      - name: Print Cache Tag Name
+        shell: bash
+        run: |
+          echo "${{ steps.extract_tag_name.outputs.imagetag }}"
+          
+  # etest:
+  #   needs: [build-matrix, test, publish]
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v3.5.3
 
-      - name: File contents
-        run: echo "${{needs.publish.outputs.imagetag}}"
+  #     - name: File contents
+  #       run: echo "${{needs.publish.outputs.imagetag}}"
