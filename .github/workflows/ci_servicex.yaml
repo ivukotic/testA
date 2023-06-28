@@ -39,11 +39,11 @@ jobs:
       - name: Checkout to repository
         uses: actions/checkout@v3.5.3
 
-      - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v4.6.1
-        with:
-          python-version: ${{ matrix.python-version }}
-        if: ${{ matrix.app.test_required }}
+      # - name: Set up Python ${{ matrix.python-version }}
+      #   uses: actions/setup-python@v4.6.1
+      #   with:
+      #     python-version: ${{ matrix.python-version }}
+      #   if: ${{ matrix.app.test_required }}
 
   publish:
     needs: [build-matrix, test]
@@ -69,11 +69,5 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3.5.3
 
-      - name: Read file contents
-        id: read_file
-        uses: andstor/file-reader-action@v1
-        with:
-          path: "${GITHUB_OUTPUT}"
-
       - name: File contents
-        run: echo "${ steps.read_file.outputs.contents }"
+        run: echo "$(echo ${{GITHUB_OUTPUT}}"
