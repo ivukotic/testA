@@ -69,7 +69,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3.5.3
 
-      - name: Extract tag name
+      - name: catc
         shell: bash
-        run: echo "cat $GITHUB_OUTPUT"
+        run: "cat $GITHUB_OUTPUT"
         id: test_tag_name
