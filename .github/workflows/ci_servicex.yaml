@@ -45,6 +45,18 @@ jobs:
           python-version: ${{ matrix.python-version }}
         if: ${{ matrix.app.test_required }}
 
+
+  publish:
+    needs: [build-matrix]
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        app: ${{fromJson(needs.build-matrix.outputs.matrix)}}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3.5.3
+
       - name: Extract tag name
         working-directory: ${{ matrix.app.dir_name }}
         shell: bash
