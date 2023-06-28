@@ -45,9 +45,8 @@ jobs:
           python-version: ${{ matrix.python-version }}
         if: ${{ matrix.app.test_required }}
 
-
   publish:
-    needs: [build-matrix]
+    needs: [build-matrix, test]
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
