@@ -52,7 +52,7 @@ jobs:
 
       - name: Extract tag name
         shell: bash
-        run: echo "{imagetag}={$(echo sslhep/${{matrix.app.image_name}}:${GITHUB_REF})}" >> $GITHUB_OUTPUT
+        run: echo "{imagetag}={$(echo sslhep/${{matrix.app.image_name}}:$GITHUB_REF)}" >> $GITHUB_OUTPUT
         # run: echo "##[set-output name=imagetag;]$(echo sslhep/${{matrix.app.image_name}}:${GITHUB_REF##*/})"
         id: extract_tag_name
 
