@@ -8,45 +8,5 @@
     "dir_name": "code_generator_python",
     "image_name": "servicex_code_gen_python",
     "test_required": true
-  },
-  {
-    "dir_name": "did_finder_cernopendata",
-    "image_name": "servicex-did-finder-cernopendata",
-    "test_required": true
-  },
-  {
-    "dir_name": "did_finder_rucio",
-    "image_name": "servicex-did-finder",
-    "test_required": false
-  },
-  {
-    "dir_name": "code_generator_funcadl_uproot",
-    "image_name": "servicex_code_gen_func_adl_uproot",
-    "test_required": true
-  },
-  {
-    "image_name": "servicex_sidecar_transformer",
-    "dir_name": "transformer_sidecar",
-    "test_required": true
-  },
-  {
-    "dir_name": "x509_secrets",
-    "image_name": "x509-secrets",
-    "test_required": false
-  },
-  {
-    "dir_name": "code_generator_funcadl_xAOD",
-    "image_name": "servicex_code_gen_cms_aod",
-    "test_required": true
-  },
-  {
-    "dir_name": "code_generator_funcadl_xAOD",
-    "image_name": "servicex_code_gen_atlas_xaod",
-    "test_required": true
-  },
-  {
-    "dir_name": "minio_cleanup",
-    "image_name": "servicex_minio_cleanup",
-    "test_required": false
   }
 ]
