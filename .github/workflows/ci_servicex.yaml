@@ -71,5 +71,5 @@ jobs:
 
       - name: catc
         shell: bash
-        run: "cat $GITHUB_OUTPUT"
+        run: cat $GITHUB_OUTPUT
         id: test_tag_name
