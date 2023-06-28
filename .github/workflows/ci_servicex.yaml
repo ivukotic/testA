@@ -40,7 +40,7 @@ jobs:
         uses: actions/checkout@v3.5.3
 
   publish:
-    needs: [build-matrix, test]
+    needs: [build-matrix]
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -49,10 +49,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3.5.3
-
+        
       - name: Extract tag name
         shell: bash
-        run: echo "imagetag=${{matrix.app.image_name}}:${{GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}}" >> $GITHUB_OUTPUT
+        run: echo "imagetag=${{matrix.app.image_name}}:$(echo ${GITHUB_REF#refs/heads/})" >> $GITHUB_OUTPUT
         # run: echo "##[set-output name=imagetag;]$(echo sslhep/${{matrix.app.image_name}}:${GITHUB_REF##*/})"
         id: extract_tag_name
 
